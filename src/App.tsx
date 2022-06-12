@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import NavBar from "./components/NavBar";
 
+import Adote from "./pages/Adote";
 import Home from "./pages/Home";
 import Sobre from "./pages/Sobre";
 
@@ -20,6 +21,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/Sobre" element={<Sobre/>}/>
+          <Route path="/Adote" element={<Adote/>}/>
         </Routes>
     </Router>
     
