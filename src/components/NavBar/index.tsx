@@ -1,22 +1,31 @@
 import React from 'react';
 import { Link } from "react-router-dom"
 
-import { BtnNav, StyledLink, TextNav, TextNós } from './style';
+import { DivNav,DivTextBtnNav,DivTextNav, StyledLink, TextBtnNav, TextNav, TextNós } from './style';
 
 export default function NavBar() {
     return(
-            
-            <header>
-                <StyledLink to='/Sobre' > <TextNós>Sobre nós</TextNós> </StyledLink>
-                <StyledLink to='/Adote'> <TextNav>Adote</TextNav> </StyledLink>
-                <TextNav>Denuncie</TextNav>
-                <TextNav>Como Ajudar</TextNav>
-                <BtnNav>
-                    <TextNav>CONTATO</TextNav>
-                </BtnNav>
+                <DivNav>
+                    <DivTextNav>
+                        <StyledLink to='/Sobre' > <TextNós>Sobre nós</TextNós> </StyledLink>
+                    </DivTextNav>
 
-            </header>        
-        
+                    <DivTextNav> 
+                        <StyledLink to='/Adote'> <TextNav>Adote</TextNav> </StyledLink>
+                    </DivTextNav>
+
+                    <DivTextNav>
+                    <StyledLink to='/Denuncie' > <TextNav>Denuncie</TextNav> </StyledLink>
+                    </DivTextNav>
+
+                    <DivTextNav>
+                    <StyledLink to='/Ajudar' > <TextNav>Como Ajudar</TextNav> </StyledLink>
+                    </DivTextNav>
+
+                    <DivTextBtnNav>
+                        <StyledLink to='/Contato' > <TextBtnNav>Contato</TextBtnNav> </StyledLink> 
+                    </DivTextBtnNav>
+                </DivNav>
     )
 }
 
