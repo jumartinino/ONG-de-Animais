@@ -3,11 +3,11 @@ import React from 'react';
 import { Link } from "react-router-dom"
 
 
-export default function Home() {
+export default function Ajudar() {
     return(
         <body>
             
-            <text>oi</text>
+         <text>Ajudar</text>
 
         </body>
         

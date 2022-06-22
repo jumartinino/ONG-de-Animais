@@ -1,31 +1,58 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from "react-router-dom"
 
-import { DivNav,DivTextBtnNav,DivTextNav, StyledLink, TextBtnNav, TextNav, TextNós } from './style';
+import { DivNav,DivNavExtended,DivNavInner,DivTextBtnNav, LeftContainer, LinkContainer, Logo, OpenLinksButton, RightContainer, StyledLink, StyledLinkExtended, TextBtnNav, TextNós } from './style';
+
 
 export default function NavBar() {
+    //bool p mudar o estado e substituir o hamburguer
+    const [extendNav, setExtendNav] = useState(false);  
+
     return(
-                <DivNav>
-                    <DivTextNav>
-                        <StyledLink to='/Sobre' > <TextNós>Sobre nós</TextNós> </StyledLink>
-                    </DivTextNav>
+            <DivNav>
 
-                    <DivTextNav> 
-                        <StyledLink to='/Adote'> <TextNav>Adote</TextNav> </StyledLink>
-                    </DivTextNav>
+                <DivNavInner>
+                    <LeftContainer>
+                        <text>LOGO VAI AQUI</text>
+                    </LeftContainer>
 
-                    <DivTextNav>
-                    <StyledLink to='/Denuncie' > <TextNav>Denuncie</TextNav> </StyledLink>
-                    </DivTextNav>
+                    <RightContainer>
+                        <LinkContainer>
+                            <StyledLink to='/Sobre' > <TextNós>Sobre nós</TextNós> </StyledLink>
 
-                    <DivTextNav>
-                    <StyledLink to='/Ajudar' > <TextNav>Como Ajudar</TextNav> </StyledLink>
-                    </DivTextNav>
+                            <StyledLink to='/Adote'> Adote </StyledLink>
 
-                    <DivTextBtnNav>
-                        <StyledLink to='/Contato' > <TextBtnNav>Contato</TextBtnNav> </StyledLink> 
-                    </DivTextBtnNav>
-                </DivNav>
+                            <StyledLink to='/Denuncie' > Denuncie </StyledLink>
+
+                            <StyledLink to='/Ajudar' > Como Ajudar </StyledLink>
+
+                            <StyledLink to='/Contato' > Contato </StyledLink>
+
+                            <OpenLinksButton onClick={() => { setExtendNav((curr) => !curr);
+                            }}>
+                               {extendNav ? <>&#10005;</> : <> &#8801;</> } 
+                            </OpenLinksButton>
+
+                        </LinkContainer>
+                    </RightContainer>
+
+                </DivNavInner>
+
+                {extendNav && (
+                <DivNavExtended>
+                   
+                    <StyledLinkExtended to='/Sobre' > <TextNós>Sobre nós</TextNós> </StyledLinkExtended>
+
+                    <StyledLinkExtended to='/Adote'> Adote </StyledLinkExtended>
+
+                    <StyledLinkExtended to='/Denuncie' > Denuncie </StyledLinkExtended>
+
+                    <StyledLinkExtended to='/Ajudar' > Como Ajudar </StyledLinkExtended>
+
+                    <StyledLinkExtended to='/Contato' > Contato </StyledLinkExtended>
+                </DivNavExtended>
+                )}
+            </DivNav>
     )
 }
 
